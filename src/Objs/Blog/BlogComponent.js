@@ -9,6 +9,8 @@ Scrivito.provideComponent('Blog', ({ page, params }) => {
   const tags = [...BlogPost.all().facet('tags')].map(facet => facet.name());
   const currentTag = params.tag;
 
+  throw "my error";
+
   return (
     <div>
       <TagList

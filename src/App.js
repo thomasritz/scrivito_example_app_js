@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as Scrivito from 'scrivito';
+import CurrentPage from './Components/CurrentPage';
 import CurrentPageMetaData from './Components/CurrentPageMetaData';
 import ErrorBoundary from './Components/ErrorBoundary';
 import Footer from './Components/Footer';
@@ -13,7 +14,7 @@ export default function App() {
       <div>
         <div className="content-wrapper">
           <Navigation />
-          <Scrivito.CurrentPage />
+          <CurrentPage />
           <NotFoundErrorPage />
         </div>
         <Footer />
