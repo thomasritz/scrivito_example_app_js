@@ -37,26 +37,16 @@ Scrivito.provideEditingConfig("GoogleMapsWidget", {
         { value: "20", title: "20 (Building level)" },
       ],
     },
-    mapStyle: {
-      title: "Map style",
-      description:
-        "Interactive map requires Google Maps API key. Default: Static",
-      values: [
-        { value: "static", title: "Static" },
-        { value: "interactive", title: "Interactive" },
-      ],
-    },
     showWidgets: {
       title: "Show widgets?",
       description: "Should widgets be shown on top of this map? Default: No",
       values: [{ value: "yes", title: "Yes" }, { value: "no", title: "No" }],
     },
   },
-  properties: ["address", "zoom", "mapStyle", "showWidgets"],
+  properties: ["address", "zoom", "showWidgets"],
   initialContent: {
     address: "Brandenburg Gate, Berlin, Germany",
     showWidgets: "no",
     zoom: "15",
-    mapStyle: "static",
   },
 });
