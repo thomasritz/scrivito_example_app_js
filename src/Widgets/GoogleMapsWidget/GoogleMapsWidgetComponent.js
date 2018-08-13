@@ -58,26 +58,39 @@ class GoogleMapsWidgetComponent extends React.Component {
   }
 
   render() {
+    const address =
+      this.props.widget.get("address") || "Brandenburg Gate, Berlin, Germany";
+    const zoom = this.props.widget.get("zoom") || "15";
+    const apiKey = googleMapsApiKey();
+    const mapStyle = this.props.widget.get("mapStyle") || "static";
+
+    let style = {};
+
+    if (mapStyle === "static") {
+      style = {
+        background: "no-repeat center / cover",
+        backgroundImage: `url(${this.googleMapsImageUrl({
+          address,
+          apiKey,
+          zoom,
+        })})`,
+      };
+    }
+
     return (
-      <div
-        ref={this.outerDivRef}
-        className="bg-map"
-        style={{
-          background: "no-repeat center / cover",
-          backgroundImage: `url(${this.googleMapsImageUrl()})`,
-        }}
-      >
-        <Widgets widget={this.props.widget} />
+      <div ref={this.outerDivRef} className="bg-map" style={style}>
+        <InteractiveMap
+          address={address}
+          zoom={zoom}
+          apiKey={apiKey}
+          mapStyle={mapStyle}
+        />
+        <Widgets widget={this.props.widget} mapStyle={mapStyle} />
       </div>
     );
   }
 
-  googleMapsImageUrl() {
-    const address =
-      this.props.widget.get("address") || "Brandenburg Gate, Berlin, Germany";
-    const zoom = this.props.widget.get("zoom") || "15";
-    const key = googleMapsApiKey();
-
+  googleMapsImageUrl({ address, apiKey, zoom }) {
     if (!this.state.height || !this.state.width) {
       // wait for the real height/width to not consume to much rate from google.
       return "";
@@ -92,26 +105,40 @@ class GoogleMapsWidgetComponent extends React.Component {
       ie: "UTF8",
     };
 
-    if (key) {
-      params.key = key;
+    if (apiKey) {
+      params.key = apiKey;
     }
 
     return googleMapsImageUrl(params);
   }
 }
 
-const Widgets = Scrivito.connect(({ widget }) => {
+function InteractiveMap({ address, apiKey, zoom, mapStyle }) {
+  if (mapStyle !== "interactive") {
+    return null;
+  }
+
+  const url = `https://www.google.com/maps/embed/v1/place?q=${address}&key=${apiKey}&zoom=${zoom}`;
+  return <iframe frameBorder="0" style={{ border: 0 }} src={url} />;
+}
+
+const Widgets = Scrivito.connect(({ widget, mapStyle }) => {
   if (widget.get("showWidgets") !== "yes") {
     return null;
   }
 
+  const containerClasses = ["container", "container-initial"];
+  if (mapStyle === "interactive") {
+    containerClasses.push("d-flex", "flex-row-reverse");
+  }
+
   return (
-    <div className="container">
-      <div className="col-lg-3 col-md-4 col-sm-5">
+    <div className={containerClasses.join(" ")}>
+      <div className="col-lg-3 col-md-4 col-sm-5 container-initial">
         <Scrivito.ContentTag
           content={widget}
           attribute="content"
-          className="card card-theme"
+          className={"card card-theme"}
         />
       </div>
     </div>
