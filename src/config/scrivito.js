@@ -1,6 +1,11 @@
 import * as Scrivito from "scrivito";
+import { wantVisitorAuthentication } from "../Auth/LoginState";
 
-const config = { tenant: process.env.SCRIVITO_TENANT, adoptUi: true };
+const config = {
+  adoptUi: true,
+  tenant: process.env.SCRIVITO_TENANT,
+  visitorAuthentication: wantVisitorAuthentication(),
+};
 
 if (process.env.SCRIVITO_ORIGIN) {
   config.origin = process.env.SCRIVITO_ORIGIN;
