@@ -1,0 +1,17 @@
+/*PisaPortalTable*/
+.PisaPortalTable {}
+
+.PisaPortalTable table {
+	background: #eee;
+	color: #111;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.PisaPortalTable table th, .PisaPortalTable table td {
+	padding-left: 5px; 
+}
+
+.PisaPortalTable table th{
+	cursor:pointer;
+}

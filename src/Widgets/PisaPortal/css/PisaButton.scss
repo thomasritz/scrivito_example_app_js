@@ -1,0 +1,112 @@
+@import "../../../assets/stylesheets/variables/"; /*to get global variables like primary color of the website*/
+
+/*PiSAPortalButton*/
+.PisaButton {
+
+  &--standard {
+    background: $primary;
+    border: 3px solid darken($primary, 20%);
+    color: white;
+    padding: 10px 26px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    line-break: loose;
+    
+  }
+ 
+  &--FAQ{
+  	margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    padding: 0px 12px;
+    }
+
+  &--left {
+    position: relative;
+    left: 0%;
+  }
+ 
+  &--center {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0);
+  }
+
+  &--right {
+    position: relative;
+    left: 98%;
+    transform: translate(-100%,0);
+  }
+  
+  &--small {
+  width: 5%;
+  }
+  
+  &--medium {
+  width: 10%;
+  }
+  
+  &--large {
+  width: 20%;
+  }  
+  
+  &--super {
+  width: 30%;
+  }
+
+  &--red{
+    background: red;
+    border: 3px solid darken(red, 20%);
+  }
+  &--blue{
+    background: blue;
+    border: 3px solid darken(blue, 20%);
+  }
+  &--green{
+    background: green;
+    border: 3px solid darken(green, 5%);
+  }
+
+  /* Hover */  
+  &--standard:hover {
+    background: lighten($primary, 10%);
+    border: 3px solid lighten($primary, 20%);
+  }
+  &--red:hover {
+    background: lighten(red, 10%);
+    border: 3px solid lighten(red, 20%);
+  }
+  &--blue:hover {
+    background: lighten(blue, 10%);
+    border: 3px solid lighten(blue, 20%);
+  }
+  &--green:hover {
+    background: lighten(green, 5%);
+    border: 3px solid lighten(green, 10%);
+  }
+ 
+  /* on Click */  
+  &--standard:active {
+    position:relative;
+    top:1px;
+  }
+  &--red:active {
+    position:relative;
+    top:1px;
+  }
+  &--blue:active {
+    position:relative;
+    top:1px;
+  }
+  &--green:active {
+    position:relative;
+    top:1px;
+  }
+}

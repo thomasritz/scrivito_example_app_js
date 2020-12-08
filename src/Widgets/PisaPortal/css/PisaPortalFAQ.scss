@@ -1,0 +1,19 @@
+/*PisaPortalFaq*/
+.PisaFaq{
+	background: #eee;
+	width:100%;
+	padding:10px;
+}
+
+.PisaFaqQuestion{
+	cursor:pointer;
+	border-bottom: 1px solid black;
+ 	font-weight: bold;
+}
+
+.PisaFaqAnswer{
+	height: 0;
+	transition: all 1s;
+	overflow: hidden;
+	border-bottom: 1px dotted black;
+}

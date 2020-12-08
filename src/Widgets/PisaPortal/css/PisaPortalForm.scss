@@ -1,0 +1,21 @@
+@import "../../../assets/stylesheets/variables/"; /*to get global variables like primary color of the website*/
+
+/*PisaPortalFormClass*/
+.PisaPortalForm {
+  margin-top: 10px;
+  font-weight: 400;
+  background: transparentize($primary, 0.6);
+  color: #000;
+  
+  &--header{
+    font-size: 30px;
+    font-weight: 550;
+    margin-top: 1%;
+    margin-left: 1%;
+  }
+}
+
+
+
+
+

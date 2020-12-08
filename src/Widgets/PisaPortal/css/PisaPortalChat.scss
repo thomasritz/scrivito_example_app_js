@@ -1,0 +1,31 @@
+.chat{
+	&--normal{
+		color: black;
+		background:white;
+	}
+	
+	
+	&--dark{
+		color: white;
+		background:black;
+	}
+	&--colorful{
+		background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+		color: transparent;
+	}	
+	&--small{
+		Font-size: 10px;
+	}	
+	&--big{
+		Font-size: 24px;
+	}	
+	&--superBig{
+		Font-size: 32px;
+		}
+}
+
+.boxsizingBorder {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
