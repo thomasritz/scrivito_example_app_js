@@ -1,0 +1,11 @@
+@import "src/assets/stylesheets/variables";
+
+.targeting {
+  border: 1px solid #fff;
+  padding: 5px;
+  .score, .gender {
+    color: #fff;
+    font-size: 300%;
+    line-height: 100%;
+  }
+}
