@@ -72,6 +72,7 @@
     "scroll-to-fragment": "^1.0.12",
     "slick-carousel": "^1.6.0",
     "typescript": "^4.3.2",
+    "use-http": "^1.0.20",
     "use-resize-observer": "^7.0.0",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0",
