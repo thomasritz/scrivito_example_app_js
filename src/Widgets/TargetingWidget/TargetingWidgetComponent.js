@@ -4,7 +4,10 @@ import useFetch from "use-http";
 import "./TargetingWidget.scss";
 
 Scrivito.provideComponent("TargetingWidget", ({ _widget }) => {
-  const profileId = "3997c37116004f90b21230276ff61ed4";
+  const profileId = localStorage.getItem("profile_id");
+  if (!profileId) {
+    return;
+  }
   const { data = {} } = useFetch(
     `https://eva.crm.infopark.net/api2/profiles/${profileId}/targeting`,
     {

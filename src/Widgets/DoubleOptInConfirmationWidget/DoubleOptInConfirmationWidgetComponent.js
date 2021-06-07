@@ -17,13 +17,18 @@ Scrivito.provideComponent("DoubleOptInConfirmationWidget", ({ widget }) => {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ t }),
-        }).then((response) => {
-          if (response.ok) {
-            setStatus("success");
-          } else {
+        })
+          .then((response) => {
+            if (response.ok) {
+              setStatus("success");
+              return response.json();
+            }
             setStatus("error");
-          }
-        });
+          })
+          .then((data) => {
+            const profileId = data.profile_id;
+            localStorage.setItem("profile_id", profileId);
+          });
       } catch (error) {
         console.log(error);
         setStatus("error");
