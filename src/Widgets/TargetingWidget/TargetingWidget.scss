@@ -1,10 +1,12 @@
 @import "src/assets/stylesheets/variables";
 
-.targeting {
+.TargetingWidget {
+  background-color: #666;
   border: 1px solid #fff;
-  padding: 5px;
+  margin: 10px;
+  padding: 10px;
   .score, .gender {
-    color: #fff;
+    color: #aaa;
     font-size: 300%;
     line-height: 100%;
   }

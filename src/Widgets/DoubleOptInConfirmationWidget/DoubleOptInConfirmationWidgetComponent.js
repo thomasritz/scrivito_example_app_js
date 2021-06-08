@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as Scrivito from "scrivito";
 
-Scrivito.provideComponent("DoubleOptInConfirmationWidget", ({ widget }) => {
+Scrivito.provideComponent("DoubleOptInConfirmationWidget", ({ _widget }) => {
   const [status, setStatus] = useState("idle");
 
   useEffect(() => {
@@ -28,6 +28,7 @@ Scrivito.provideComponent("DoubleOptInConfirmationWidget", ({ widget }) => {
           .then((data) => {
             const profileId = data.profile_id;
             localStorage.setItem("profile_id", profileId);
+            addScore("confirm-form");
           });
       } catch (error) {
         console.log(error);
@@ -55,3 +56,12 @@ Scrivito.provideComponent("DoubleOptInConfirmationWidget", ({ widget }) => {
     </div>
   );
 });
+
+function addScore(eventType) {
+  const profileId = localStorage.getItem("profile_id");
+  fetch(`https://eva.crm.infopark.net/api2/profiles/${profileId}/score`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ event_type: eventType }),
+  });
+}
