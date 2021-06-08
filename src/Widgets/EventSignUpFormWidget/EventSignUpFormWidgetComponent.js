@@ -39,7 +39,7 @@ class EventSignUpFormWidget extends React.Component {
         },
         body: JSON.stringify({
           form_name: "demo",
-          confirmation_link_url: "http://localhost:8080/confirm",
+          confirmation_link_url: "https://motivating-cranberry-scrivito-0307.scrivito.net/confirm",
           form: this.state.fields,
           language: "de",
           mailing_topics: {},
