@@ -67,6 +67,7 @@ class EventSignUpFormWidget extends React.Component {
 
     const form = (
       <div className="EventSignUpFormWidget">
+        <h2>EventSignUpFormWidget</h2>
         <form name="demo">
           <div className="row mb-5">
             <div className="col-xl-6">
