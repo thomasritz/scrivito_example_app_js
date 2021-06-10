@@ -67,7 +67,7 @@ class EventSignUpFormWidget extends React.Component {
 
     const form = (
       <div className="EventSignUpFormWidget">
-        <h2>EventSignUpFormWidget</h2>
+        <h2>Anfrage</h2>
         <form name="demo">
           <div className="row mb-5">
             <div className="col-xl-6">
@@ -112,9 +112,12 @@ class EventSignUpFormWidget extends React.Component {
                     checked={this.state.fields.newsletter_consent}
                     disabled={Scrivito.isInPlaceEditingActive()}
                   />
-                  <span>Ich möchte den Newsletter abonnieren.</span>
+                  <span> Ich habe die Datenschutzerklärung zur Kenntnis genommen. Ich stimme einer elektronischen Speicherung und Verarbeitung meiner eingegebenen Daten zur Beantwortung meiner Anfrage zu. Die Einwilligung kann jederzeit für die Zukunft per E-Mail an datenschutz@MENNEKES.de widerrufen werden.*</span>
                 </label>
               </div>
+              <p>
+                Unsere Datenschutzerklärung finden Sie <a href="https://example.com">hier</a>.
+              </p>
               <div className="form-group">
                 <button
                   className="btn btn-brand m_t_20 w_100"
@@ -133,19 +136,14 @@ class EventSignUpFormWidget extends React.Component {
       <div className="EventSignUpFormWidget">
         <div className="box box_white right_box">
           <div className="content_box">
-            <ul className="icon_list icon_list_one_line block m_t_20">
-              <li>
-                <i className="fa fa-check" aria-hidden="true"></i>
-                <div className="icon_list_content">
-                  <span className="bold block">Bestätigung</span>
-                  <span>
-                    Wir haben Ihnen eine E-Mail zur Bestätigung an Ihre
-                    E-Mail-Adresse gesendet. Bitte klicken Sie auf den enthaltenen
-                    Link, um Ihre E-Mail-Adresse zu bestätigen.
-                  </span>
-                </div>
-              </li>
-            </ul>
+            <div className="icon_list_content">
+              <span className="bold block">Bestätigung</span>
+              <span>
+                Wir haben Ihnen eine E-Mail zur Bestätigung an Ihre
+                E-Mail-Adresse gesendet. Bitte klicken Sie auf den enthaltenen
+                Link, um Ihre E-Mail-Adresse zu bestätigen.
+              </span>
+            </div>
           </div>
         </div>
       </div>
