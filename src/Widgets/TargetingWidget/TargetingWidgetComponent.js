@@ -11,7 +11,7 @@ Scrivito.provideComponent("TargetingWidget", ({ _widget }) => {
   const { data = {} } = useFetch(
     `https://eva.crm.infopark.net/api2/profiles/${profileId}/targeting`,
     {
-      cacheLife: 5000,
+      cacheLife: 1000,
       cachePolicy: "cache-first",
       responseType: "json",
       persist: true,
