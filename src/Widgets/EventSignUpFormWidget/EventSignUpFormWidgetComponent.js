@@ -69,64 +69,60 @@ class EventSignUpFormWidget extends React.Component {
       <div className="EventSignUpFormWidget">
         <h2>Anfrage</h2>
         <form name="demo">
-          <div className="row mb-5">
-            <div className="col-xl-6">
-              <div className="form-group">
-                <label htmlFor="name" className="sr-only">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="name"
-                  name="name"
-                  value={this.state.name}
-                  onChange={this.handleChange}
-                  placeholder="Name *"
-                  noValidate
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="email" className="sr-only">
-                  E-Mail
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="email"
-                  name="email"
-                  value={this.state.email}
-                  onChange={this.handleChange}
-                  placeholder="E-Mail *"
-                  noValidate
-                />
-              </div>
-              <div className="form-group">
-                <label className="check_label">
-                  <input
-                    id="newsletter_consent"
-                    name="newsletter_consent"
-                    className="absolute"
-                    type="checkbox"
-                    onChange={this.handleChange}
-                    checked={this.state.fields.newsletter_consent}
-                    disabled={Scrivito.isInPlaceEditingActive()}
-                  />
-                  <span> Ich habe die Datenschutzerklärung zur Kenntnis genommen. Ich stimme einer elektronischen Speicherung und Verarbeitung meiner eingegebenen Daten zur Beantwortung meiner Anfrage zu. Die Einwilligung kann jederzeit für die Zukunft per E-Mail an datenschutz@MENNEKES.de widerrufen werden.*</span>
-                </label>
-              </div>
-              <p>
-                Unsere Datenschutzerklärung finden Sie <a href="https://example.com">hier</a>.
-              </p>
-              <div className="form-group">
-                <button
-                  className="btn btn-brand m_t_20 w_100"
-                  onClick={this.handleSubmit}
-                >
-                  Anmelden
-                </button>
-              </div>
-            </div>
+          <div className="form-group">
+            <label htmlFor="name" className="sr-only">
+              Name
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="name"
+              name="name"
+              value={this.state.name}
+              onChange={this.handleChange}
+              placeholder="Name *"
+              noValidate
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email" className="sr-only">
+              E-Mail
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="email"
+              name="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+              placeholder="E-Mail *"
+              noValidate
+            />
+          </div>
+          <div className="form-group">
+            <label className="check_label">
+              <input
+                id="newsletter_consent"
+                name="newsletter_consent"
+                className="absolute"
+                type="checkbox"
+                onChange={this.handleChange}
+                checked={this.state.fields.newsletter_consent}
+                disabled={Scrivito.isInPlaceEditingActive()}
+              />
+              <span>&nbsp;&nbsp;Ich habe die Datenschutzerklärung zur Kenntnis genommen. Ich stimme einer elektronischen Speicherung und Verarbeitung meiner eingegebenen Daten zur Beantwortung meiner Anfrage zu. Die Einwilligung kann jederzeit für die Zukunft per E-Mail an datenschutz@MENNEKES.de widerrufen werden.*</span>
+            </label>
+          </div>
+          <p>
+            Unsere Datenschutzerklärung finden Sie <a href="https://example.com">hier</a>.
+          </p>
+          <div className="form-group">
+            <button
+              className="btn btn-brand m_t_20 w_100"
+              onClick={this.handleSubmit}
+            >
+              Anmelden
+            </button>
           </div>
         </form>
       </div>
