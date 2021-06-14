@@ -100,6 +100,21 @@ class EventSignUpFormWidget extends React.Component {
             />
           </div>
           <div className="form-group">
+            <label htmlFor="company" className="sr-only">
+              Firma
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="company"
+              name="company"
+              value={this.state.company}
+              onChange={this.handleChange}
+              placeholder="Firma"
+              noValidate
+            />
+          </div>
+          <div className="form-group">
             <label className="check_label">
               <input
                 id="newsletter_consent"
